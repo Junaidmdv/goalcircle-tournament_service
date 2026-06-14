@@ -1,15 +1,16 @@
 package server
 
-import "google.golang.org/grpc"
+import (
+	"github.com/Junaidmdv/goalcircle-tournament_service/internal/config"
+	"google.golang.org/grpc"
+)
 
 type GRPCServer struct {
 	Server *grpc.Server
+	Config *config.Config
 }
 
-
-
-
-func NewGRPCServer() *GRPCServer {
+func NewGRPCServer(cnfg *config.Config) *GRPCServer {
 
 	server := grpc.NewServer()
 
@@ -18,12 +19,6 @@ func NewGRPCServer() *GRPCServer {
 	}
 }
 
-
-
-
-
-
-
-func(gs *GRPCServer)BootstrapSetup(){
+func (gs *GRPCServer) BootstrapSetup() {
 
 }
